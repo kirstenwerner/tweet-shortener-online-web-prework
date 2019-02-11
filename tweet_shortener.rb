@@ -1,12 +1,22 @@
+$word_substitute = {}
+
 def dictionary
-  dictionary = {"hello": "hi", "to": "2", "two": "2", "too": "2", "for": "4", "four": "4", "be": "b", "you": "u", "at": "@", "and": "&"}
+  $word_substitute = {"hello" => "hi", "to" => "2", "two" => "2", "too" => "2", "for" => "4", "four" => "4", "be" => "b", "you" => "u", "at" => "@", "and" => "&"}
 end
-  
+
 def word_substituter(string)
-  string.split(" ")
-end 
-
-
-
+  word_array = string.split(" ")
+  dictionary
+  short_tweet = ""
+  $word_substitute.each do |long_word, short_word|
+    word_array.each do |word|
+      if word == long_word
+      word.replace(short_word)
+      end
+    end
+  end
+  short_tweet = word_array.join(" ")
+  short_tweet
+end
 
 # Write your code here.
