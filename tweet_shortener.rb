@@ -10,7 +10,7 @@ def word_substituter(string)
   short_tweet = ""
   $word_substitute.each do |long_word, short_word|
     word_array.each do |word|
-      if word == long_word
+      if word == long_word || word.capitalize == long_word
       word.replace(short_word)
       end
     end
@@ -21,7 +21,6 @@ end
 
 def bulk_tweet_shortener(array_of_tweets)
   array_of_tweets.each do |tweet|
-    tweet = tweet.downcase
     puts word_substituter(tweet)
   end
 end
