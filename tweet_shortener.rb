@@ -21,7 +21,7 @@ end
 
 def bulk_tweet_shortener(array_of_tweets)
   array_of_tweets.each do |tweet|
-    tweet.downcase
+    tweet = tweet.downcase
     puts word_substituter(tweet)
   end
 end
